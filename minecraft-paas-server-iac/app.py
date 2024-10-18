@@ -4,7 +4,7 @@ import boto3
 
 import aws_cdk as cdk
 
-from minecraft_server.minecraft_server_stack import MinecraftServerStack
+from src.minecraft_server.minecraft_server_stack import MinecraftServerStack
 
 AWS_ACCOUNT_ID = boto3.client('sts').get_caller_identity().get('Account')
 AWS_REGION = os.getenv("AWS_REGION", "us-west-2")
@@ -29,5 +29,6 @@ MinecraftServerStack(app, "MinecraftServerStack",
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
+
 
 app.synth()

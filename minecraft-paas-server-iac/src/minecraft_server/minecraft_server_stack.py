@@ -1,7 +1,7 @@
 from aws_cdk import (
     Stack,
     aws_ec2 as ec2,
-    aws_iam as iam,
+    aws_iam as iam
 )
 from constructs import Construct
 from pathlib import Path
@@ -9,6 +9,8 @@ from string import Template
 
 THIS_DIR = Path(__file__).parent
 USER_DATA_SH_TEMPLATE_FPATH = (THIS_DIR / "../../resources/user-data.template.sh").resolve()
+from constructs import Construct
+from typing import Any
 
 class MinecraftServerStack(Stack):
 
@@ -89,7 +91,7 @@ class MinecraftServerStack(Stack):
         # ---------------
         
         # We could do backups to S3
-        
+
 
 
 def render_user_data_script(
@@ -109,3 +111,9 @@ def render_user_data_script(
             "MINECRAFT_SERVER_SEMANTIC_VERSION": minecraft_semantic_version,
         }
     )        
+        # example resource
+        # queue = sqs.Queue(
+        #     self, "CdkBoilerplateQueue",
+        #     visibility_timeout=Duration.seconds(300),
+        # )
+        

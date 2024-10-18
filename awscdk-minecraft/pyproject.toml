@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "aws-cdk-lib==2.154.1",
+    "boto3>=1.35.44",
     "constructs>=10.0.0,<11.0.0",
 ]
 
@@ -14,4 +15,4 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/minecraft_server"]
+packages = ["src/cdk_minecraft"]
