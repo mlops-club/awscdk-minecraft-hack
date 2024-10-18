@@ -1,3 +1,5 @@
+minecraft-paas-server-iac/sample-server/data
+
 *.DS_Store
 *cache*
 *env

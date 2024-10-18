@@ -1,0 +1,32 @@
+{
+    "folders": [
+      {
+        "path": "awscdk-minecraft",
+        "name": "CDK Minecraft"
+      },
+      {
+        "path": "minecraft-paas-backend-api",
+        "name": "PaaS Backend API"
+      },
+      {
+        "path": "minecraft-paas-backup-service",
+        "name": "PaaS Backup Service"
+      },
+      {
+        "path": "minecraft-paas-frontend",
+        "name": "PaaS Frontend"
+      },
+      {
+        "path": "minecraft-paas-server-iac",
+        "name": "PaaS Server IAC"
+      }
+    ],
+    "settings": {
+      "awscdk-minecraft.python.pythonPath": "./awscdk-minecraft/venv/bin/python",
+      "minecraft-paas-backend-api.python.pythonPath": "./minecraft-paas-backend-api/venv/bin/python",
+      "minecraft-paas-backup-service.python.pythonPath": "./minecraft-paas-backup-service/venv/bin/python",
+      "minecraft-paas-frontend.python.pythonPath": "./minecraft-paas-frontend/venv/bin/python",
+      "minecraft-paas-server-iac.python.pythonPath": "./minecraft-paas-server-iac/venv/bin/python"
+    }
+  }
+  
