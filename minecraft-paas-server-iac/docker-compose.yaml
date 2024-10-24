@@ -1,28 +1,16 @@
-version: "3.9"
-
 services:
-  minecraft:
-    # image docs: https://github.com/itzg/docker-minecraft-server
-    image: itzg/minecraft-server
-    container_name: minecraft
-    restart: always
-    ports:
-      - "25565:25565"
+  awscdk:
+    image: mlops-club/awscdk-minecraft-server
+    command: deploy --app 'python /app/app.py'
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
-      EULA: TRUE
-      TYPE: PAPER
-      VERSION: ${MINECRAFT_SERVER_SEMANTIC_VERSION:-1.21}
-      MEMORY: 3G
-    deploy:
-      replicas: 1
-    stdin_open: true
+      AWS_REGION: us-west-2
+      AWS_PROFILE: minecraft
+    user: root
     volumes:
-      - ./data:/data
-#     networks:
-#       - minecraft-server
-#
-# networks:
-#   minecraft-server:
-#     driver: overlay
-#     name: minecraft-server
-#     attachable: true
+      - ~/.aws:/root/.aws
+      - ~/.aws:/users/pn/.aws
+      - ~/.aws:/.aws
+      - ~/.aws:/home/pn/.aws
