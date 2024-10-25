@@ -14,7 +14,7 @@ THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ##########################
 
 function set-local-aws-env-vars {
-    export AWS_PROFILE=minecraft
+    export AWS_PROFILE=minecraftjay
     export AWS_REGION=us-west-2
 }
 
@@ -22,15 +22,15 @@ function set-local-aws-env-vars {
 
 function deploy {
     set-local-aws-env-vars
-    uv run -- cdk deploy \
+    uv run -- cdk deploy MinecraftServerS3Stack-2 \
         --app 'python app.py' \
         --profile $AWS_PROFILE \
-        --region $AWS_REGION 
+        --region $AWS_REGION
 }
 
 function destroy {
     set-local-aws-env-vars
-    uv run -- cdk destroy \
+    uv run -- cdk destroy MinecraftServerS3Stack-2\
         --app 'python app.py' \
         --profile $AWS_PROFILE \
         --region $AWS_REGION 
